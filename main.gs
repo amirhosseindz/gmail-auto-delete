@@ -11,10 +11,13 @@ function autoDeleteEmails() {
 
   Logger.log("Running cleanup for 3-day group (" + emails3.length + " senders)...");
   deleteByAgeAndSenders(3, emails3);
-  
+
   Logger.log("Running cleanup for 5-day group (" + emails5.length + " senders)...");
   deleteByAgeAndSenders(5, emails5);
-  
+
+  Logger.log("Archiving emails older than a year...");
+  archiveOldEmails("1y");
+
   Logger.log("=== Auto-delete job finished ===");
 }
 

@@ -6,7 +6,8 @@ A Google Apps Script that automatically deletes Gmail messages from specific sen
 
 - Reads a Google Sheet to get email addresses to target.
 - Deletes emails older than a configurable number of days (e.g., 3-day, 5-day lists).
-- Supports batch deletion to avoid Gmail API limits.
+- Archived emails older than a year.
+- Supports batch operations to avoid Gmail API limits.
 - Modular code with reusable functions for fetching emails from sheets.
 
 ## Setup
@@ -20,4 +21,5 @@ A Google Apps Script that automatically deletes Gmail messages from specific sen
 ```
 var ssid = "YOUR_SPREADSHEET_ID";
 ```
-4. (Optional) Set up a **time-driven trigger** to run the script automatically daily.
+5. In order to enable the archiving functionalitiy, add Gmail API to the services.
+6. (Optional) Set up a **time-driven trigger** to run the script automatically daily.
