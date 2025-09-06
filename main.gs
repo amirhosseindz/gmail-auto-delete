@@ -1,11 +1,11 @@
 function autoDeleteEmails() {
-  var scriptProps = PropertiesService.getScriptProperties();
-  
-  var emails3 = JSON.parse(scriptProps.getProperty("3dayEmails"));
-  var emails5 = JSON.parse(scriptProps.getProperty("5dayEmails"));
-  
+  var {
+    emails3Day: emails3,
+    emails5Day: emails5
+  } = getEmailListsFromSheet();
+
   Logger.log("=== Auto-delete job started ===");
-  
+
   Logger.log("Running cleanup for verification codes...");
   deleteEmailsInBatch('subject:(verification code OR authentication code) older_than:1d');
 
