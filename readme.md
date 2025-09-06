@@ -11,9 +11,13 @@ A Google Apps Script that automatically deletes Gmail messages from specific sen
 
 ## Setup
 
-1. Create a Google Sheet named `GmailAutoDelete` with columns like:
+1. Create a Google Sheet with columns like:
    - `3dayEmails`
    - `5dayEmails`
 2. Add the email addresses under each column.
 3. Copy the script into [Google Apps Script](https://script.google.com/) attached to your Google account.
+4. Copy the spreadsheet ID from its URL and replace it in the code:
+```
+var ssid = "YOUR_SPREADSHEET_ID";
+```
 4. (Optional) Set up a **time-driven trigger** to run the script automatically daily.

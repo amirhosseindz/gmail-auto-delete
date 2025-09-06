@@ -34,8 +34,12 @@ function getColumnValuesByHeader(sheet, headerName) {
  * Fetches email lists for 3-day and 5-day scenarios.
  * @returns {Object} Object containing arrays: { emails3Day, emails5Day }
  */
-function getEmailListsFromSheet() {
-  var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("GmailAutoDelete");
+function getEmailListsFromSheet() {  
+  // Replace with the ID from the sheet URL, e.g: https://docs.google.com/spreadsheets/d/SPREADSHEET_ID/edit
+  var ssid = "YOUR_SPREADSHEET_ID";
+  var ss = SpreadsheetApp.openById(ssid);
+
+  var sheet = ss.getSheetByName("Sheet1");
 
   var emails3Day = getColumnValuesByHeader(sheet, "3dayEmails");
   var emails5Day = getColumnValuesByHeader(sheet, "5dayEmails");
